@@ -22,7 +22,8 @@ list_of_file=[
     'app.py',
     'Dockerfile',
     'requirements.txt',
-    'setup.py'
+    'setup.py',
+    'main.py'
 
 ]
 
