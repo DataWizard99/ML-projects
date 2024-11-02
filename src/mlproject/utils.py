@@ -6,7 +6,10 @@ from mlproject.exception import CustomException
 import pandas as pd
 from dotenv import load_dotenv
 import pymysql
-from sqlalchemy import create_engine
+# from sqlalchemy import create_engine
+import pickle
+import numpy as np
+
 
 load_dotenv()
 
@@ -28,7 +31,7 @@ def read_sql_data():
         print("Connection successful")
 
         # Creating an engine for SQLAlchemy
-        engine = create_engine("mysql+pymysql://root:Sidra123@127.0.0.1:3306/college")
+        # engine = create_engine("mysql+pymysql://root:Sidra123@127.0.0.1:3306/college")
 
         # Reading data into a DataFrame
         df = pd.read_sql_query('SELECT * FROM `college.students`;', connection)
@@ -39,33 +42,20 @@ def read_sql_data():
     except pymysql.err.OperationalError as e:
         print(f"Error: {e}")
 
-    # finally:
-    #     # Closing the connection
-    #     if 'connection' in locals():
-    #         connection.close()
+def save_object(file_path, obj):
+    try:
+        dir_path= os.path.dirname(file_path)
+        os.makedirs(dir_path, exist_ok=True)
+        with open(file_path, 'wb') as file_obj:
+            pickle.dump(obj, file_obj)
+
+    except Exception as e:
+        raise CustomException(e,sys)
+
+   
 
 
 
 
-# def read_sql_data():
-#     logging.info('Reading SQL database started')
-#     try:
-#         connection = pymysql.connect(
-#         host='localhost',
-#         user='root',
-#         password='Sidra123@',  # Use the same password you used in MySQL CLI
-#         db='college'
-#     )
-#     print("Connection successful")
-#     engine = create_engine("mysql+pymysql://root:Sidra123@127.0.0.1:3306/college")
 
-#     df =pd.read_sql_query('SELECT * FROM college.`college.students`;', connection)
-
-#     print(df.head())
-
-#     return df
-
-#     except pymysql.err.OperationalError as e:
-#     print(f"Error: {e}")
-    
  

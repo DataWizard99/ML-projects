@@ -25,10 +25,14 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         try:
             ##reading the data from mysql
-            df=read_sql_data()
+            df=pd.read_csv(os.path.join(r'C:\Users\Deemi\Desktop\ML-projects\notebook\raw.csv'))
             logging.info("Reading completed mysql database")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
+            if df is not None:
+                df.to_csv(self.ingestion_config.raw_data_path, index=False, header=True)
+        
+
 
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
             train_set,test_set=train_test_split(df,test_size=0.2,random_state=42)
