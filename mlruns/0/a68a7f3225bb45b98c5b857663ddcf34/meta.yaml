@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Deemi/Desktop/ML-projects/mlruns/0/a68a7f3225bb45b98c5b857663ddcf34/artifacts
+end_time: 1731001169789
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a68a7f3225bb45b98c5b857663ddcf34
+run_name: spiffy-mule-770
+run_uuid: a68a7f3225bb45b98c5b857663ddcf34
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731001169683
+status: 4
+tags: []
+user_id: root

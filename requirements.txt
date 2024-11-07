@@ -8,3 +8,4 @@ pymysql
 scikit-learn
 catboost
 xgboost
+mlflow

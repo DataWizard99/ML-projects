@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Deemi/Desktop/ML-projects/mlruns/0/5cdb1f78968f4195b66a3446abe6c346/artifacts
+end_time: 1731001524540
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5cdb1f78968f4195b66a3446abe6c346
+run_name: invincible-moth-493
+run_uuid: 5cdb1f78968f4195b66a3446abe6c346
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731001513029
+status: 3
+tags: []
+user_id: root
